@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <Windows.h>
+
+
+void main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	printf("Лапко\n");
+	printf("Дарья\n");
+	printf("Николаевна\n");
+	printf("\n");
+	printf("Группа: ИСдо-11\n");
+	printf("Дата 17.01.23\n");
+	printf("Предмет: Основы программирования\n");
+	printf("Лабораторная работа №1\n");
+
+}
+
+void main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	printf("           /フ    フ\n");
+	printf("          |   _  _|\n");
+	printf("          /'ミ _x ミ\n");
+	printf("        /        |\n");
+	printf("       /    ヽ   ノ  \n");
+	printf("     ー      | | | \n");
+	printf("   /  |      | | |\n");
+	printf(" /  ー\n");
+	printf("| (  ヽ___  ヽ_) _)\n");
+	printf("|  ー\\n");
+	printf("\ーーーつ\n");
+}
