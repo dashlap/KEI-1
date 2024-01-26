@@ -62,3 +62,34 @@ void main()
 	
 	printf("Квартира площадью %f m*m по цене %d RUB/(m*m) стоит <%10.1f> RUB\n", m, rub_m, price);
 }
+////////////////////////////////////
+#4
+#include <stdio.h>
+#include <math.h>
+
+#include <Windows.h>
+
+int main(){
+	
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	float m;
+	int rub_m;
+	int b; 
+	printf("Введите площадь квартиры m*m=");
+	scanf_s("%f", &m);
+
+	printf("Введите стоимость 1 кв метра квартиры RUB = ");
+	scanf_s("%d", &rub_m);
+	
+	printf("Введите зарплату RUB = ");
+	scanf_s("%d", &b);
+
+
+	float price = m * rub_m;
+	int s = price / (b / 2) ;
+	
+	printf("Квартира площадью %f m*m по цене %d RUB/(m*m) стоит <%10.1f> RUB\n", m, rub_m, price);
+	printf("При зарплате %d RUB нужно копить %1d месяцев  ",b ,s );
+}
