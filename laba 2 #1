@@ -37,3 +37,28 @@ void main()
 	printf("Предмет падает с высоты %f метров\n", h);
 	printf("Он коснется земли %f секунд\n", t);
 }
+
+////////////////////////////////
+#3
+#include <stdio.h>
+#include <math.h>
+
+#include <Windows.h>
+
+void main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	float m;
+	int rub_m;
+	printf("Введите площадь квартиры m*m=");
+	scanf_s("%f", &m);
+	printf("Введите 1 кв метра квартиры RUB=");
+	scanf_s("%d", &rub_m);
+
+
+	float price = m * rub_m; 
+	
+	printf("Квартира площадью %f m*m по цене %d RUB/(m*m) стоит <%10.1f> RUB\n", m, rub_m, price);
+}
