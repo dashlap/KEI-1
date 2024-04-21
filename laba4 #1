@@ -1,7 +1,12 @@
 //дом
+MoveToEx(hdc, 400, 350, NULL);
 LineTo(hdc, 150, 350);
 LineTo(hdc, 150, 525);
 LineTo(hdc, 400, 525);
+LineTo(hdc, 400, 350);
+//крыша
+MoveToEx(hdc, 150, 350, NULL);
+LineTo(hdc, 275, 250);
 LineTo(hdc, 400, 350);
 //окно
 MoveToEx(hdc, 225, 400, NULL);
