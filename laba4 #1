@@ -1,40 +1,47 @@
-// Перемещаем "курсор" рисования линии в точку (x = 10, y = 30)
-            MoveToEx(hdc, 150, 350, NULL);
-            // Рисуем линию из текущей позиции курсора в точку (x = 10, y = 100)
-            // "Курсор" после отрисовки находится в новой точке  (x = 10, y = 100)
-            LineTo(hdc, 275, 250);
-            // Рисуем линию от предыдущей точки (x = 10, y = 100) до точки (x = 150, y = 100)
-            LineTo(hdc, 400, 350);
-            // Рисуем линию от предыдущей точки (x = 150, y = 100) до точки (x = 10, y = 30)
-            LineTo(hdc, 150, 350);
-            LineTo(hdc, 150, 525);
-            LineTo(hdc, 400, 525);
-            LineTo(hdc, 400, 350);
-            
-            MoveToEx(hdc, 225, 400, NULL);
-            LineTo(hdc, 325, 400);
-            LineTo(hdc, 325, 475);
-            LineTo(hdc, 225, 475);
-            LineTo(hdc, 225, 400);
-
-            MoveToEx(hdc, 275, 400, NULL);
-            LineTo(hdc, 275, 475);
-
-            MoveToEx(hdc, 275, 425, NULL);
-            LineTo(hdc, 325, 425);
-
-            MoveToEx(hdc, 450, 525, NULL);
-            LineTo(hdc, 600, 525);
-            LineTo(hdc, 525, 450);
-            LineTo(hdc, 450, 525);
-
-            MoveToEx(hdc, 525, 400, NULL);
-            LineTo(hdc, 475, 450);
-            LineTo(hdc, 575, 450);
-            LineTo(hdc, 525, 400);
-
-            MoveToEx(hdc, 75, 340, NULL);
-            LineTo(hdc,75, 525);
-            
-
-            MoveToEx(hdc, 525, 375, NULL);
+//дом
+LineTo(hdc, 150, 350);
+LineTo(hdc, 150, 525);
+LineTo(hdc, 400, 525);
+LineTo(hdc, 400, 350);
+//окно
+MoveToEx(hdc, 225, 400, NULL);
+LineTo(hdc, 325, 400);
+LineTo(hdc, 325, 475);
+LineTo(hdc, 225, 475);
+LineTo(hdc, 225, 400);
+//окно2
+MoveToEx(hdc, 275, 400, NULL);
+LineTo(hdc, 275, 475);
+//окно3
+MoveToEx(hdc, 275, 425, NULL);
+LineTo(hdc, 325, 425);
+//елка1
+MoveToEx(hdc, 450, 525, NULL);
+LineTo(hdc, 600, 525);
+LineTo(hdc, 525, 450);
+LineTo(hdc, 450, 525);
+//елка2
+MoveToEx(hdc, 525, 400, NULL);
+LineTo(hdc, 475, 450);
+LineTo(hdc, 575, 450);
+LineTo(hdc, 525, 400);
+//елка3
+MoveToEx(hdc, 525, 375, NULL);
+LineTo(hdc, 500, 400);
+LineTo(hdc, 550, 400);
+LineTo(hdc, 525, 375);
+//сосна
+MoveToEx(hdc, 75, 340, NULL);
+LineTo(hdc, 75, 525);
+MoveToEx(hdc, 75, 375, NULL);
+LineTo(hdc, 55, 360);
+MoveToEx(hdc, 75, 400, NULL);
+LineTo(hdc, 100, 375);
+MoveToEx(hdc, 75, 425, NULL);
+LineTo(hdc, 40, 380);
+MoveToEx(hdc, 75, 450, NULL);
+LineTo(hdc, 120, 400);
+MoveToEx(hdc, 75, 470, NULL);
+LineTo(hdc, 30, 420);
+MoveToEx(hdc, 75, 500, NULL);
+LineTo(hdc, 120, 450);
