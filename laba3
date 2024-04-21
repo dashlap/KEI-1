@@ -1,1 +1,222 @@
+#1
 
+#include <stdio.h>
+#include <math.h>
+#include <Windows.h>
+
+void main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+
+	int a, b, min, max;
+
+	printf("Введите первое число = ");
+	scanf_s("%d", &a);
+
+	printf("Введите второе число = ");
+	scanf_s("%d", &b);
+	if (a < b) {
+		min = a;
+		max = b;
+	}
+	else {
+		min = b;
+		max = a;
+	}	
+	printf("Большое число - %d \n", max);
+	printf("Меньшее число - %d \n", min);
+
+}
+//////////////////////////////////////////////////////
+#2
+
+#include <stdio.h>
+#include <Windows.h>
+
+
+void main()
+{
+	int v1, v2, v3;
+	int max;
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	printf("Введите 3 числа: ");
+	scanf_s("%d%d%d", &v1, &v2, &v3);
+	max = v1;
+	if (v2 > max) {
+		max = v2;
+	} 
+	else (v3 > max) {
+		max = v3;
+	}
+	printf("max = %d", max);
+}
+/////////////////////////////////////////////////////
+#3
+#include <stdio.h>
+#include <math.h>
+#include <Windows.h>
+
+void main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+
+	int temp;
+
+	printf("Введите температуру в помещении: ");
+	scanf_s("%d", &temp);
+
+	
+	if (temp < 18) {
+		printf("Холодно");
+	}
+	if ( 18 <= temp && temp  < 22) {
+		printf("Прохладно");
+	}
+	if (22 <= temp && temp < 26) {
+		printf("Тепло");
+	}
+	if (temp >= 26) {
+		printf("Жарко");
+	}
+
+}
+////////////////////////////////////////////////////
+#4
+
+#include <stdio.h>
+#include <math.h>
+#include <Windows.h>
+
+void main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+
+	int a, b, c, d, e, max;
+
+	printf("Введите 5 чисел: ");
+	scanf_s("%d%d%d%d%d", &a, &b, &c, &d, &e);
+
+	max = 0;
+	if (a > max) {
+		max = a;
+	}
+	if (b > max) {
+		max = b;
+	}
+	if (c > max) {
+		max = c;
+	}
+	if (d > max) {
+		max = d;
+	}
+	if (e > max) {
+		max = e;
+	}
+	printf("Самое большое число: %d ", max);
+}
+/////////////////////////////////////////////////////
+#dz1
+
+#include <stdio.h>
+#include <math.h>
+#include <Windows.h>
+
+void main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+
+	int temp;
+
+	printf("Введите температуру в Египте: ");
+	scanf_s("%d", &temp);
+
+	if (temp < 10) {
+		printf("Мороз");
+	}
+	if ( 10 <= temp && temp  < 15) {
+		printf("Холодно");
+	}
+	if (15 <= temp && temp <= 30) {
+		printf("Тепло");
+	}
+	if (temp > 30) {
+		printf("Жарко");
+	}
+}
+//////////////////////////////////////////////////////
+#dz2
+
+#include <stdio.h>
+#include <math.h>
+#include <Windows.h>
+
+void main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+
+	int cena;
+
+	printf("Введите стоимость однокомнатной квартиры: ");
+	scanf_s("%d", &cena);
+
+	if (cena < 1000000) {
+		printf("Дешево");
+	}
+	if ( 1000000 <= cena && cena  < 2000000) {
+		printf("Нормально");
+	}
+	if (2000000 <= cena && cena < 3500000) {
+		printf("Дорого");
+	}
+	if (cena > 3500000) {
+		printf("Ужасно дорого");
+	}
+}
+/////////////////////////////////////////////////////
+#dz3
+
+#include <stdio.h>
+#include <math.h>
+#include <Windows.h>
+
+void main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+
+	int v;
+
+	printf("Введите скорость автомобиля: ");
+	scanf_s("%d", &v);
+
+	if ( v > 15 && v < 25) {
+		printf("Медленно");
+	}
+	else if ( v <= 15) {
+		printf("Очень медлено");
+	}
+	else if (v >= 25 && v < 60) {
+		printf("Нормально");
+	}
+	else if (v >= 60 && v < 100) {
+		printf("Быстро");
+	}
+	else if (v >= 100 && v < 160) {
+		printf("Очень быстро");
+	}	
+
+}
