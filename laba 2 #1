@@ -93,3 +93,52 @@ int main(){
 	printf("Квартира площадью %f m*m по цене %d RUB/(m*m) стоит <%10.1f> RUB\n", m, rub_m, price);
 	printf("При зарплате %d RUB нужно копить %1d месяцев  ",b ,s );
 }
+/////////////////////////////////////////////////
+#dz1
+
+#include <stdio.h>
+#include <math.h>
+#include <Windows.h>
+
+void main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	printf("Вычислить объём куба\n");
+
+	float a;
+
+	printf("Введите ребро куба a = ");
+	scanf_s("%f", &a);
+
+	float sk = a * a * a;
+
+	printf("Площадь куба = %f\n", sk);
+
+}
+//////////////////////////////////////////////
+#dz2
+
+#include <stdio.h>
+#include <math.h>
+#include <Windows.h>
+
+void main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	printf("Вычислить сдачу на кассе\n");
+
+	int a, b, s;
+
+	printf("Введите стоимость товара = ");
+	scanf_s("%d", &a);
+
+	printf("Введите сумму, которую вам дали за товар = ");
+	scanf_s("%d", &b);
+	s = b - a;
+	printf("Сдача составляет - %d \n", s);
+
+}
