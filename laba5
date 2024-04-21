@@ -1,1 +1,43 @@
+#1
 
+HBRUSH hBrush = CreateSolidBrush(RGB(255, 128, 67));
+SelectObject(hdc, hBrush);
+Rectangle(hdc, 50, 200, 300, 250);
+
+
+MoveToEx(hdc, 100, 200, NULL);
+LineTo(hdc, 150, 150);
+LineTo(hdc, 250, 150);
+LineTo(hdc, 300, 200);
+
+hPen = CreatePen(PS_SOLID, 7, RGB(0, 0, 128));
+SelectObject(hdc, hPen);
+
+hBrush = CreateHatchBrush(HS_FDIAGONAL, RGB(255, 0, 0));
+SelectObject(hdc, hBrush);
+Ellipse(hdc, 75, 225, 125, 275);
+
+hPen = CreatePen(PS_SOLID, 7, RGB(0, 128, 0));
+SelectObject(hdc, hPen);
+
+hBrush = CreateHatchBrush(HS_FDIAGONAL, RGB(0, 255, 0));
+SelectObject(hdc, hBrush);
+
+Ellipse(hdc, 225, 225, 275, 275);
+/////////////////////////////////////////////
+#2
+
+HPEN hPen = CreatePen(PS_SOLID, 3, RGB(128, 128, 128));
+            SelectObject(hdc, hPen);
+            HBRUSH hBrush = CreateHatchBrush(HS_FDIAGONAL, RGB(0, 0, 0));
+            SelectObject(hdc, hBrush);
+
+            Ellipse(hdc, 20, 0, 40, 20);
+            Ellipse(hdc, 10, 20, 50, 60);
+            Ellipse(hdc, 0, 60, 60, 120);
+
+            MoveToEx(hdc, 15, 30, NULL);
+            LineTo(hdc, 0, 40);
+
+            MoveToEx(hdc, 45, 30, NULL);
+            LineTo(hdc, 60, 40);           
