@@ -1,1 +1,112 @@
+#1
 
+#include
+void main() {
+	int i;
+	int n;
+
+	printf("n = ");
+	scanf_s("%d", &n);
+
+	i = 1;
+	do {
+		printf("%d ", i);
+		i = i + 1;
+	} while (i <= n);
+}
+//////////////////////////////
+#2
+#include
+void main() {
+	int i;
+	int stepen;
+
+	stepen = 1;
+	i = 0;
+	do {
+		printf("2^%d = %d\n", i, stepen);
+		i = i + 1;
+		stepen = stepen * 2;
+	} while (i <= 5);
+}
+////////////////////////////////////
+#dz1
+
+#include <stdio.h>
+#include <Windows.h>
+
+
+void main() {
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	int n;
+	int i;
+
+	printf("Введите число чисел, которых надо вывести = ");
+	scanf_s("%d", &n);
+	i = 2;
+	do {
+		printf("%d ", i);
+		i = i + 2;
+
+	} while (i <= n * 2);
+}
+//////////////////////////////////
+#dz2
+
+#include <stdio.h>
+#include <Windows.h>
+
+
+void main() {
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	int n;
+	
+	int i;
+
+	printf("Введите число чисел, которых надо вывести = ");
+	scanf_s("%d", &n);
+	printf("Скольки должны быть кратны = ");
+	scanf_s("%d", &i);
+	i = 4;
+	do {
+		printf("%d ", i);
+		i = i + 4;
+
+	} while (i <= n * 4);
+}
+//////////////////////////////////////////
+#dz3
+
+#include <stdio.h>
+#include <Windows.h>
+
+
+void main() {
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	int i;
+	int s;
+	int n;
+
+	printf("Введите степень числа 4 = ");
+	scanf_s("%d", &n);
+
+	s = 1;
+	i = 0;
+
+	do {
+		printf("4^%d = %d\n", i, s);
+
+		s = s * 4;
+		i = i + 1;
+
+	} while (i <= n);
+}
