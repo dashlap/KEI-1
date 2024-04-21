@@ -1,3 +1,4 @@
+#1
 //дом
 MoveToEx(hdc, 400, 350, NULL);
 LineTo(hdc, 150, 350);
