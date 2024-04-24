@@ -101,3 +101,178 @@ void drawTree(HDC hdc) {
         y1 += 10;
     } while (x1 <= 200);
 }
+
+#dz1
+void drawCar(HDC hdc) {
+    HPEN hPen = CreatePen(PS_SOLID, 3, RGB(128, 0, 0));
+    SelectObject(hdc, hPen);
+
+    HBRUSH hBrush = CreateSolidBrush(RGB(255, 128, 67));
+    SelectObject(hdc, hBrush);
+    Rectangle(hdc, 50, 200, 300, 250);
+
+
+    MoveToEx(hdc, 100, 200, NULL);
+    LineTo(hdc, 150, 150);
+    LineTo(hdc, 250, 150);
+    LineTo(hdc, 300, 200);
+
+    hPen = CreatePen(PS_SOLID, 7, RGB(0, 0, 128));
+    SelectObject(hdc, hPen);
+
+    hBrush = CreateHatchBrush(HS_FDIAGONAL, RGB(255, 0, 0));
+    SelectObject(hdc, hBrush);
+    Ellipse(hdc, 75, 225, 125, 275);
+
+    hPen = CreatePen(PS_SOLID, 7, RGB(0, 128, 0));
+    SelectObject(hdc, hPen);
+
+    hBrush = CreateHatchBrush(HS_FDIAGONAL, RGB(0, 255, 0));
+    SelectObject(hdc, hBrush);
+
+    Ellipse(hdc, 225, 225, 275, 275);
+}
+
+void drawSnowMan(HDC hdc) {
+    HPEN hPen = CreatePen(PS_SOLID, 3, RGB(128, 128, 128));
+    SelectObject(hdc, hPen);
+    HBRUSH hBrush = CreateHatchBrush(HS_FDIAGONAL, RGB(0, 0, 0));
+    SelectObject(hdc, hBrush);
+
+    Ellipse(hdc, 20, 0, 40, 20);
+    Ellipse(hdc, 10, 20, 50, 60);
+    Ellipse(hdc, 0, 60, 60, 120);
+
+    MoveToEx(hdc, 15, 30, NULL);
+    LineTo(hdc, 0, 40);
+
+    MoveToEx(hdc, 45, 30, NULL);
+    LineTo(hdc, 60, 40);
+}
+
+void drawHome(HDC hdc) {
+    //дом
+    MoveToEx(hdc, 400, 350, NULL);
+    LineTo(hdc, 150, 350);
+    LineTo(hdc, 150, 525);
+    LineTo(hdc, 400, 525);
+    LineTo(hdc, 400, 350);
+    //крыша
+    MoveToEx(hdc, 150, 350, NULL);
+    LineTo(hdc, 275, 250);
+    LineTo(hdc, 400, 350);
+    //окно
+    MoveToEx(hdc, 225, 400, NULL);
+    LineTo(hdc, 325, 400);
+    LineTo(hdc, 325, 475);
+    LineTo(hdc, 225, 475);
+    LineTo(hdc, 225, 400);
+    //окно2
+    MoveToEx(hdc, 275, 400, NULL);
+    LineTo(hdc, 275, 475);
+    //окно3
+    MoveToEx(hdc, 275, 425, NULL);
+    LineTo(hdc, 325, 425);
+}
+
+void drawElka(HDC hdc) {
+    //елка1
+    MoveToEx(hdc, 450, 525, NULL);
+    LineTo(hdc, 600, 525);
+    LineTo(hdc, 525, 450);
+    LineTo(hdc, 450, 525);
+    //елка2
+    MoveToEx(hdc, 525, 400, NULL);
+    LineTo(hdc, 475, 450);
+    LineTo(hdc, 575, 450);
+    LineTo(hdc, 525, 400);
+    //елка3
+    MoveToEx(hdc, 525, 375, NULL);
+    LineTo(hdc, 500, 400);
+    LineTo(hdc, 550, 400);
+    LineTo(hdc, 525, 375);
+}
+
+void drawKyst1(HDC hdc){
+    {//куст1
+        int x1 = 400, y1 = 150;
+        int x2 = 500, y2 = 250;
+
+        do {
+            MoveToEx(hdc, x1, y1, NULL);
+            LineTo(hdc, x2, y2);
+            x1 += 10;
+        } while (x1 <= 600);
+    }
+}
+
+void drawKyst2(HDC hdc) {
+    {//куст2
+        int x1 = 0, y1 = 250;
+        int x2 = 100, y2 = 250;
+
+        do {
+            MoveToEx(hdc, x1, y1, NULL);
+            LineTo(hdc, x2, y2);
+            x1 += 10;
+            y1 -= 20;
+        } while (x1 <= 100);
+
+        x1 = 100;
+        y1 = 50;
+        do {
+            MoveToEx(hdc, x1, y1, NULL);
+            LineTo(hdc, x2, y2);
+            x1 += 10;
+            y1 += 20;
+        } while (x1 <= 200);
+    }
+}
+
+void drawSosna(HDC hdc) {
+    //сосна
+    MoveToEx(hdc, 75, 340, NULL);
+    LineTo(hdc, 75, 525);
+    MoveToEx(hdc, 75, 375, NULL);
+    LineTo(hdc, 55, 360);
+    MoveToEx(hdc, 75, 400, NULL);
+    LineTo(hdc, 100, 375);
+    MoveToEx(hdc, 75, 425, NULL);
+    LineTo(hdc, 40, 380);
+    MoveToEx(hdc, 75, 450, NULL);
+    LineTo(hdc, 120, 400);
+    MoveToEx(hdc, 75, 470, NULL);
+    LineTo(hdc, 30, 420);
+    MoveToEx(hdc, 75, 500, NULL);
+    LineTo(hdc, 120, 450);
+}
+
+void drawZabor(HDC hdc) {
+    {//забор
+        int x1 = 150, y1 = 0;
+        int x2 = 150, y2 = 100;
+        do {
+            MoveToEx(hdc, x1, y1, NULL);
+            LineTo(hdc, x2, y2);
+            x1 += 25;
+            x2 += 25;
+        } while (x1 <= 450);
+    }
+}
+
+
+drawHome(hdc);
+
+drawCar(hdc);
+
+drawSnowMan(hdc);
+
+drawElka(hdc);
+
+drawKyst1(hdc);
+
+drawKyst2(hdc);
+
+drawZabor(hdc);
+
+drawSosna(hdc);
