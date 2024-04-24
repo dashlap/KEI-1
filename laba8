@@ -1,1 +1,25 @@
+#1
+
+#include <stdio.h>
+#include <Windows.h>
+
+void aboutMe() {
+	printf("Лапко\n");
+	printf("Дарья\n");
+	printf("Николаевна\n");
+	printf("\n");
+	printf("Группа: ИСдо - 11\n");
+	printf("Дата: 14.02.2024\n");
+	printf("Предмет: Основы программирования\n");
+	printf("Лабораторная работа #8\n");
+}
+void main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	aboutMe();
+}
+/////////////////////////////////////////
+#2
+
 
