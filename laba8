@@ -20,6 +20,84 @@ void main() {
 	aboutMe();
 }
 /////////////////////////////////////////
-#2
+#2,3,4
+
+void drawHome(HDC hdc) {
+    //дом
+    MoveToEx(hdc, 400, 350, NULL);
+    LineTo(hdc, 150, 350);
+    LineTo(hdc, 150, 525);
+    LineTo(hdc, 400, 525);
+    LineTo(hdc, 400, 350);
+    //крыша
+    MoveToEx(hdc, 150, 350, NULL);
+    LineTo(hdc, 275, 250);
+    LineTo(hdc, 400, 350);
+    //окно
+    MoveToEx(hdc, 225, 400, NULL);
+    LineTo(hdc, 325, 400);
+    LineTo(hdc, 325, 475);
+    LineTo(hdc, 225, 475);
+    LineTo(hdc, 225, 400);
+    //окно2
+    MoveToEx(hdc, 275, 400, NULL);
+    LineTo(hdc, 275, 475);
+    //окно3
+    MoveToEx(hdc, 275, 425, NULL);
+    LineTo(hdc, 325, 425);
+}
+
+void drawCar(HDC hdc) {
+    HPEN hPen = CreatePen(PS_SOLID, 3, RGB(128, 0, 0));
+    SelectObject(hdc, hPen);
+
+    HBRUSH hBrush = CreateSolidBrush(RGB(255, 128, 67));
+    SelectObject(hdc, hBrush);
+    Rectangle(hdc, 50, 200, 300, 250);
 
 
+    MoveToEx(hdc, 100, 200, NULL);
+    LineTo(hdc, 150, 150);
+    LineTo(hdc, 250, 150);
+    LineTo(hdc, 300, 200);
+
+    hPen = CreatePen(PS_SOLID, 7, RGB(0, 0, 128));
+    SelectObject(hdc, hPen);
+
+    hBrush = CreateHatchBrush(HS_FDIAGONAL, RGB(255, 0, 0));
+    SelectObject(hdc, hBrush);
+    Ellipse(hdc, 75, 225, 125, 275);
+
+    hPen = CreatePen(PS_SOLID, 7, RGB(0, 128, 0));
+    SelectObject(hdc, hPen);
+
+    hBrush = CreateHatchBrush(HS_FDIAGONAL, RGB(0, 255, 0));
+    SelectObject(hdc, hBrush);
+
+    Ellipse(hdc, 225, 225, 275, 275);
+}
+
+void drawTree(HDC hdc) {
+    HPEN hPen = CreatePen(PS_SOLID, 3, RGB(0, 200, 0));
+    SelectObject(hdc, hPen);
+
+    int x1 = 0, y1 = 250;
+    int x2 = 100, y2 = 250;
+
+    do {
+        MoveToEx(hdc, x1, y1, NULL);
+        LineTo(hdc, x2, y2);
+        x1 += 5;
+        y1 -= 10;
+    } while (x1 <= 100);
+
+    x1 = 100, y1 = 50;
+
+
+    do {
+        MoveToEx(hdc, x1, y1, NULL);
+        LineTo(hdc, x2, y2);
+        x1 += 5;
+        y1 += 10;
+    } while (x1 <= 200);
+}
