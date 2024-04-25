@@ -1,1 +1,90 @@
+#1, 2, 3
 
+#include <stdio.h>
+#include <windows.h>
+#include <math.h>
+#include <conio.h>
+
+void Task1() {
+	printf("Task1() START\n");
+
+	int i;
+	int j;
+	int A;
+
+	printf("i = ");
+	scanf_s("%d", &i);
+
+	printf("j = ");
+	scanf_s("%d", &j);
+
+	A = i * 10 + j;
+
+	printf(" A = %d\n", A);
+	printf("Task1 FINISH\n");
+}
+
+void Task2() {
+	printf("Task2() START\n");
+
+	int y[11][11];
+	int i, j;
+
+	for (ii = 1; i, 11; i++) {
+		y[i][j] = i * j;
+		printf("%d", y[i][j]);
+
+	}
+	printf("Task2() FINISH");
+}
+
+void Task 3() {
+	printf("Task3() START\n");
+	int i, j;
+	i = 1;
+	do {
+		j = 1;
+		j = i * j;
+		do {
+			printf("%d", j);
+			j++;
+		} while (j <= 5);
+		
+		printf("\n");
+		i++;
+	} while (i <= 5);
+	printf("Task3() FINISH");
+
+}
+
+void main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	int n = -1;
+
+	do {
+		printf("\n");
+		printf("\n");
+		printf("Выберите нужную вам операцию\n");
+		printf("1: задача 1 (i*10+j\n");
+		printf("2: задача 2 (Таблица Пифагора)\n");
+		printf("3: задача 3 (Рисунок по варианту)\n");
+		printf("\n");
+		printf("0: Выйти из программы\n");
+
+		scanf_s("%d", &n);
+
+		switch (n) {
+		case 1:
+			Task1();
+			break;
+		case 2:
+			Task2();
+			break;
+		case 3:
+			Task3();
+			break;
+		}
+	} while (n != 0);
+	}
+}
