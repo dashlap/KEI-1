@@ -1,26 +1,36 @@
+#1
+int ix = 0;
+int iy = 0;
+    case WM_KEYDOWN:
+        switch (wParam)
+        {
+        case VK_LEFT: // стрелка ВЛЕВО
+            ix -= 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_RIGHT: // стрелка ВПРАВО
+            ix += 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_DOWN: // стрелка ВНИЗ
+            iy += 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_UP: // стрелка ВВЕРХ
+            iy -= 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        }
+        break;
+
+    case WM_PAINT:
+        {
+            PAINTSTRUCT ps;
+            HDC hdc = BeginPaint(hWnd, &ps);
+            // TODO: Добавьте сюда любой код прорисовки, использующий HDC...
+            Rectangle(hdc, ix - 10, iy - 10, ix + 10, iy + 10);
+            EndPaint(hWnd, &ps);
+        }
+
 #2
-\\\\ source.cpp\\\\\
-#include "Image.h"
-
-void Image0(HDC hdc, int cx, int cy, COLORREF color) {
-	HPEN hPen;
-	hPen = CreatePen(PS_SOLID, 2, color);
-	SelectObject(hdc, hPen);
-
-	POINT p[4];
-	p[0].x = cx;
-	p[0].y = cy + 20;
-	p[1].x = cx + 20;
-	p[1].y = cy - 20;
-	p[2].x = cx - 20;
-	p[2].y = cy - 20;
-	p[3].x = cx;
-	p[3].y = cy + 20;
-
-	Polyline(hdc, p, 4);
-	DeleteObject(hPen);
-}
-void Image1(HDC hdc, int cx, int cy, COLORREF color) {
-
-}
 
