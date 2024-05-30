@@ -1,1 +1,331 @@
+#1
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <Windows.h>
 
+void main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	int arr[10];
+	int n;
+	int i;
+
+
+	FILE* fin = fopen("in.txt", "rt");
+	fscanf_s(fin, "%d", &n);
+	for (i = 0; i < n; i++) {
+		fscanf_s(fin, "%d", &arr[i]);
+	}
+	fclose(fin);
+
+
+	printf("ввели: arr[%d] = ", n);
+	for (i = 0; i < n; i++) {
+		printf("%d ", arr[i]);
+	}
+	int s = 0;
+	for (i = 0; i < n; i++) {
+		s += arr[i];
+	}
+	float sa = (float)s / n;
+	int m = 0;
+	printf("\nsa =  %f\n", sa);
+	printf("вывели: arr[%d] = ", n);
+	for (i = 0; i < n; i++) {		
+		if (arr[i] > sa) {
+			m++;
+			printf("%d ", arr[i]);
+		}
+	}
+	
+	FILE* fout;
+	fout = fopen("out.txt", "wt");
+	fprintf(fout, "%d\n", m);
+	for (i = 0; i < n; i++) {
+		if (arr[i] > sa) {
+			fprintf(fout, "%d ", arr[i]);
+		}
+	}
+	fclose(fout);
+
+}
+
+#2
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <Windows.h>
+
+int* pa; //Указатель на массив. 
+int n;
+
+void Load() {
+	FILE* fin = fopen("in.txt", "rt");
+	if (fin == NULL) {
+		printf("Входной файл не найден\n");
+		return;
+	}
+	fscanf(fin, "%d", &n);
+	pa = (int*)malloc(sizeof(int) * n);
+
+	for (int i = 0; i < n; i++) {
+		fscanf(fin, "%d", &pa[i]);
+	}
+	fclose(fin);
+}
+
+void SaveResult() {
+	float sa = 0;
+	float s = 0;
+	for (int i = 0; i < n; i++) {
+		s += pa[i];
+	}
+	sa = s / n;
+
+	int m = 0;
+	for (int i = 0; i < n; i++) {
+		if (pa[i] > sa) {
+			m++;
+		}
+	}
+	FILE* fout = fopen("out.txt", "wt");
+	if (fout == NULL) {
+		printf("Выходной файл не найден\n");
+		return;
+	}
+	fprintf(fout, "%d\n", m);
+	for (int i = 0; i < n; i++) {
+		if (pa[i] > sa) {
+			fprintf(fout, "%d ", pa[i]);
+		}
+	}
+	fclose(fout);
+}
+
+void main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	
+
+	Load();
+	SaveResult();
+
+	free(pa);
+}
+
+#3
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <Windows.h>
+
+int* pa; //Указатель на массив. 
+int n;
+
+void Load() {
+	FILE* fin = fopen("in.txt", "rt");
+	if (fin == NULL) {
+		printf("Входной файл не найден\n");
+		return;
+	}
+	fscanf(fin, "%d", &n);
+	pa = (int*)malloc(sizeof(int) * n);
+
+	for (int i = 0; i < n; i++) {
+		fscanf(fin, "%d", &pa[i]);
+	}
+	fclose(fin);
+}
+
+void SaveResult() {
+	float sa = 0;
+	float s = 0;
+	for (int i = 0; i < n; i++) {
+		s += pa[i];
+	}
+	sa = s / n;
+
+	int m = 0;
+	for (int i = 0; i < n; i++) {
+		if ( 0 < pa[i] && pa[i] < sa) {
+			m++;
+		}
+	}
+	FILE* fout = fopen("out.txt", "wt");
+	if (fout == NULL) {
+		printf("Выходной файл не найден\n");
+		return;
+	}
+	fprintf(fout, "%d\n", m);
+	for (int i = 0; i < n; i++) {
+		if (0 < pa[i] && pa[i] < sa) {
+			fprintf(fout, "%d ", pa[i]);
+		}
+	}
+	fclose(fout);
+}
+
+void main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	
+
+	Load();
+	SaveResult();
+
+	free(pa);
+}
+
+#4
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <Windows.h>
+
+int* pa; //Указатель на массив. 
+int n;
+
+void Load() {
+	FILE* fin = fopen("in.txt", "rt");
+	if (fin == NULL) {
+		printf("Входной файл не найден\n");
+		return;
+	}
+	fscanf(fin, "%d", &n);
+	pa = (int*)malloc(sizeof(int) * n);
+
+	for (int i = 0; i < n; i++) {
+		fscanf(fin, "%d", &pa[i]);
+	}
+	fclose(fin);
+}
+
+void SaveResult() {
+	int max = 0;
+	for (int i = 0; i < n; i++) {
+		if (pa[i] > pa[max]) {
+			max = i;
+		}
+	}
+	int s = pa[max] / 3;
+	int s1 = s + s;
+
+
+	int m = 0;
+	for (int i = 0; i < n; i++) {
+		if (pa[i] > s1) {
+			m++;
+		}
+	}
+
+	FILE* fout;
+	fout = fopen("out.txt", "wt");
+	fprintf(fout, "%d\n", m);
+	for (int i = 0; i < n; i++) {
+		if (pa[i] > s1) {
+			fprintf(fout, "%d ", pa[i]);
+		}
+	}
+	fclose(fout);
+
+}
+
+void main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	
+
+	Load();
+	SaveResult();
+
+	free(pa);
+}
+
+#5
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <Windows.h>
+
+int* pa;
+int n;
+
+void Load() {
+	FILE* fin = fopen("in.txt", "rt");
+	fscanf_s(fin, "%d", &n);
+	pa = (int*)malloc(sizeof(int) * n);
+	for (int i = 0; i < n; i++) {
+		fscanf_s(fin, "%d ", &pa[i]);
+	}
+	fclose(fin);
+}
+void Sorting() {
+
+
+	for (int j = 0; j < n - 1; j++) {
+
+		int min = pa[j];
+		int iMin = j;
+		for (int i = j + 1; i < n; i++) {
+			if (pa[i] < min) {
+				min = pa[i];
+				iMin = i;
+			}
+		}
+
+		int tmp = pa[iMin];
+		pa[iMin] = pa[j];
+		pa[j] = tmp;
+	}
+}
+
+void Sorting2() {
+
+	for (int j = 0; j < n - 1; j++) {
+
+		int min = pa[j];
+		int iMin = j;
+		for (int i = j + 1; i < n; i++) {
+			if (pa[i] > min) {
+				min = pa[i];
+				iMin = i;
+			}
+		}
+
+		int tmp = pa[iMin];
+		pa[iMin] = pa[j];
+		pa[j] = tmp;
+	}
+
+}
+
+void SaveResult() {
+
+
+	FILE* fout;
+	fout = fopen("out.txt", "wt");
+	fprintf(fout, "%d\n", n);
+
+	Sorting();
+	for (int i = 0; i < n; i++) {
+		if (pa[i] % 2 == 0) {
+			fprintf(fout, "%d ", pa[i]);
+		}
+	}
+	Sorting2();
+	for (int i = 0; i < n; i++) {
+		if (pa[i] % 2 == 1) {
+			fprintf(fout, "%d ", pa[i]);
+		}
+	}
+	fclose(fout);
+
+}
+
+
+void main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	Load();
+	SaveResult();
+
+	free(pa);
+}
