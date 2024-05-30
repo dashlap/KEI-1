@@ -33,4 +33,492 @@ int iy = 0;
         }
 
 #2
+case WM_KEYDOWN:
+        switch (wParam)
+        {
+        case VK_LEFT: // стрелка ВЛЕВО
+            ix -= 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_RIGHT: // стрелка ВПРАВО
+            ix += 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_DOWN: // стрелка ВНИЗ
+            iy += 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_UP: // стрелка ВВЕРХ
+            iy -= 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        }
+        break;
+
+    case WM_PAINT:
+        {
+            PAINTSTRUCT ps;
+            HDC hdc = BeginPaint(hWnd, &ps);
+            // TODO: Добавьте сюда любой код прорисовки, использующий HDC...
+            Image0(hdc, ix, iy, RGB(0, 255, 0));
+            EndPaint(hWnd, &ps);
+        }
+
+#3
+case WM_KEYDOWN:
+        switch (wParam)
+        {
+        case VK_LEFT: // стрелка ВЛЕВО
+            ix -= 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_RIGHT: // стрелка ВПРАВО
+            ix += 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_DOWN: // стрелка ВНИЗ
+            iy += 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_UP: // стрелка ВВЕРХ
+            iy -= 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_SPACE: // пробел
+            type++;
+            if (type > 8) type = 0;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+
+        }
+        break;
+
+    case WM_PAINT:
+        {
+            PAINTSTRUCT ps;
+            HDC hdc = BeginPaint(hWnd, &ps);
+            // TODO: Добавьте сюда любой код прорисовки, использующий HDC...
+            
+            if (type == 0) Image0(hdc, ix, iy, RGB(r, g, b));
+            if (type == 1) Image1(hdc, ix, iy, RGB(r, g, b));
+            if (type == 2) Image2(hdc, ix, iy, RGB(r, g, b));
+            if (type == 3) Image3(hdc, ix, iy, RGB(r, g, b));
+            if (type == 4) Image4(hdc, ix, iy, RGB(r, g, b));
+            if (type == 5) Image5(hdc, ix, iy, RGB(r, g, b));
+            if (type == 6) Image6(hdc, ix, iy, RGB(r, g, b));
+            if (type == 7) Image7(hdc, ix, iy, RGB(r, g, b));
+            if (type == 8) Image8(hdc, ix, iy, RGB(r, g, b));
+
+            EndPaint(hWnd, &ps);
+        }
+#4
+case WM_KEYDOWN:
+        switch (wParam)
+        {
+        case VK_LEFT: // стрелка ВЛЕВО
+            ix -= 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_RIGHT: // стрелка ВПРАВО
+            ix += 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_DOWN: // стрелка ВНИЗ
+            iy += 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_UP: // стрелка ВВЕРХ
+            iy -= 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_SPACE: // пробел
+            type++;
+            if (type > 8) type = 0;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        }
+    case WM_LBUTTONDOWN:
+        WORD xPos, yPos;
+
+        // Сохраняем координаты курсора мыши
+        xPos = LOWORD(lParam);
+        yPos = HIWORD(lParam);
+
+
+        ix = xPos;
+        iy = yPos;
+        InvalidateRect(hWnd, NULL, TRUE);
+        break;
+        break;
+
+    case WM_PAINT:
+        {
+            PAINTSTRUCT ps;
+            HDC hdc = BeginPaint(hWnd, &ps);
+            // TODO: Добавьте сюда любой код прорисовки, использующий HDC...
+            
+            if (type == 0) Image0(hdc, ix, iy, RGB(r, g, b));
+            if (type == 1) Image1(hdc, ix, iy, RGB(r, g, b));
+            if (type == 2) Image2(hdc, ix, iy, RGB(r, g, b));
+            if (type == 3) Image3(hdc, ix, iy, RGB(r, g, b));
+            if (type == 4) Image4(hdc, ix, iy, RGB(r, g, b));
+            if (type == 5) Image5(hdc, ix, iy, RGB(r, g, b));
+            if (type == 6) Image6(hdc, ix, iy, RGB(r, g, b));
+            if (type == 7) Image7(hdc, ix, iy, RGB(r, g, b));
+            if (type == 8) Image8(hdc, ix, iy, RGB(r, g, b));
+
+            EndPaint(hWnd, &ps);
+        }
+#5
+void Task5(HDC hdc) {
+
+    int x, y, i, j;
+
+    y = iy;
+    i = 0;
+    do {
+
+        x = ix;
+        j = 0;
+        do {
+
+
+            if (type == 0) Image0(hdc, x, y, RGB(r, g, b));
+            if (type == 1) Image1(hdc, x, y, RGB(r, g, b));
+            if (type == 2) Image2(hdc, x, y, RGB(r, g, b));
+            if (type == 3) Image3(hdc, x, y, RGB(r, g, b));
+            if (type == 4) Image4(hdc, x, y, RGB(r, g, b));
+            if (type == 5) Image5(hdc, x, y, RGB(r, g, b));
+            if (type == 6) Image6(hdc, x, y, RGB(r, g, b));
+            if (type == 7) Image7(hdc, x, y, RGB(r, g, b));
+            if (type == 8) Image8(hdc, x, y, RGB(r, g, b));
+
+            x += 50;
+            j++;
+
+        } while (j < image1_m);
+
+        y += 70;
+        i++;
+
+    } while (i < image1_n);
+
+}
+
+//
+//  ФУНКЦИЯ: WndProc(HWND, UINT, WPARAM, LPARAM)
+//
+//  ЦЕЛЬ: Обрабатывает сообщения в главном окне.
+//
+//  WM_COMMAND  - обработать меню приложения
+//  WM_PAINT    - Отрисовка главного окна
+//  WM_DESTROY  - отправить сообщение о выходе и вернуться
+//
+//
+LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+    switch (message)
+    {
+    case WM_COMMAND:
+        {
+            int wmId = LOWORD(wParam);
+            // Разобрать выбор в меню:
+            switch (wmId)
+            {
+            case IDM_ABOUT:
+                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+                break;
+            case IDM_EXIT:
+                DestroyWindow(hWnd);
+                break;
+            default:
+                return DefWindowProc(hWnd, message, wParam, lParam);
+            }
+        }
+        break;
+    case WM_KEYDOWN:
+        switch (wParam)
+        {
+        case VK_LEFT: // стрелка ВЛЕВО
+            ix -= 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_RIGHT: // стрелка ВПРАВО
+            ix += 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_DOWN: // стрелка ВНИЗ
+            iy += 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_UP: // стрелка ВВЕРХ
+            iy -= 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_SPACE: // пробел
+            type++;
+            if (type > 8) type = 0;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x52: // R
+            r += 30;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x42: // B
+            b += 30;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x47: // G
+            g += 30;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x49: // I
+            image1_m -= 1;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x4f: // O
+            image1_m += 1;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x55: // U
+            image1_n -= 1;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x4e: // N
+            image1_n += 1;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+
+        }
+        break;
+
+    case WM_LBUTTONDOWN:
+        WORD xPos, yPos;
+
+        // Сохраняем координаты курсора мыши
+        xPos = LOWORD(lParam);
+        yPos = HIWORD(lParam);
+
+
+        ix = xPos;
+        iy = yPos;
+        InvalidateRect(hWnd, NULL, TRUE);
+        break;
+
+
+    case WM_PAINT:
+        {
+            PAINTSTRUCT ps;
+            HDC hdc = BeginPaint(hWnd, &ps);
+            // TODO: Добавьте сюда любой код прорисовки, использующий HDC...
+            Task5(hdc);
+
+#6
+int ix = 0;
+int iy = 0;
+int type = 0;
+int image1_n = 1;
+int image1_m = 1;
+int r = 0;
+int g = 0;
+int b = 0;
+
+//
+//  ФУНКЦИЯ: MyRegisterClass()
+//
+//  ЦЕЛЬ: Регистрирует класс окна.
+//
+ATOM MyRegisterClass(HINSTANCE hInstance)
+{
+    WNDCLASSEXW wcex;
+
+    wcex.cbSize = sizeof(WNDCLASSEX);
+
+    wcex.style          = CS_HREDRAW | CS_VREDRAW;
+    wcex.lpfnWndProc    = WndProc;
+    wcex.cbClsExtra     = 0;
+    wcex.cbWndExtra     = 0;
+    wcex.hInstance      = hInstance;
+    wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_LABA14));
+    wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
+    wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
+    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_LABA14);
+    wcex.lpszClassName  = szWindowClass;
+    wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
+
+    return RegisterClassExW(&wcex);
+}
+
+//
+//   ФУНКЦИЯ: InitInstance(HINSTANCE, int)
+//
+//   ЦЕЛЬ: Сохраняет маркер экземпляра и создает главное окно
+//
+//   КОММЕНТАРИИ:
+//
+//        В этой функции маркер экземпляра сохраняется в глобальной переменной, а также
+//        создается и выводится главное окно программы.
+//
+BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
+{
+   hInst = hInstance; // Сохранить маркер экземпляра в глобальной переменной
+
+   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+
+   if (!hWnd)
+   {
+      return FALSE;
+   }
+
+   ShowWindow(hWnd, nCmdShow);
+   UpdateWindow(hWnd);
+
+   return TRUE;
+}
+void Task5(HDC hdc) {
+
+    int x, y, i, j;
+
+    y = iy;
+    i = 0;
+    do {
+
+        x = ix;
+        j = 0;
+        do {
+
+
+            if (type == 0) Image0(hdc, x, y, RGB(r, g, b));
+            if (type == 1) Image1(hdc, x, y, RGB(r, g, b));
+            if (type == 2) Image2(hdc, x, y, RGB(r, g, b));
+            if (type == 3) Image3(hdc, x, y, RGB(r, g, b));
+            if (type == 4) Image4(hdc, x, y, RGB(r, g, b));
+            if (type == 5) Image5(hdc, x, y, RGB(r, g, b));
+            if (type == 6) Image6(hdc, x, y, RGB(r, g, b));
+            if (type == 7) Image7(hdc, x, y, RGB(r, g, b));
+            if (type == 8) Image8(hdc, x, y, RGB(r, g, b));
+
+            x += 50;
+            j++;
+
+        } while (j < image1_m);
+
+        y += 70;
+        i++;
+
+    } while (i < image1_n);
+
+}
+
+//
+//  ФУНКЦИЯ: WndProc(HWND, UINT, WPARAM, LPARAM)
+//
+//  ЦЕЛЬ: Обрабатывает сообщения в главном окне.
+//
+//  WM_COMMAND  - обработать меню приложения
+//  WM_PAINT    - Отрисовка главного окна
+//  WM_DESTROY  - отправить сообщение о выходе и вернуться
+//
+//
+LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+    switch (message)
+    {
+    case WM_COMMAND:
+        {
+            int wmId = LOWORD(wParam);
+            // Разобрать выбор в меню:
+            switch (wmId)
+            {
+            case IDM_ABOUT:
+                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+                break;
+            case IDM_EXIT:
+                DestroyWindow(hWnd);
+                break;
+            default:
+                return DefWindowProc(hWnd, message, wParam, lParam);
+            }
+        }
+        break;
+    case WM_KEYDOWN:
+        switch (wParam)
+        {
+        case VK_LEFT: // стрелка ВЛЕВО
+            ix -= 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_RIGHT: // стрелка ВПРАВО
+            ix += 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_DOWN: // стрелка ВНИЗ
+            iy += 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_UP: // стрелка ВВЕРХ
+            iy -= 10;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case VK_SPACE: // пробел
+            type++;
+            if (type > 8) type = 0;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x52: // R
+            r += 30;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x42: // B
+            b += 30;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x47: // G
+            g += 30;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x49: // I
+            image1_m -= 1;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x4f: // O
+            image1_m += 1;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x55: // U
+            image1_n -= 1;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+        case 0x4e: // N
+            image1_n += 1;
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
+
+        }
+        break;
+
+    case WM_LBUTTONDOWN:
+        WORD xPos, yPos;
+
+        // Сохраняем координаты курсора мыши
+        xPos = LOWORD(lParam);
+        yPos = HIWORD(lParam);
+
+
+        ix = xPos;
+        iy = yPos;
+        InvalidateRect(hWnd, NULL, TRUE);
+        break;
+
+
+    case WM_PAINT:
+        {
+            PAINTSTRUCT ps;
+            HDC hdc = BeginPaint(hWnd, &ps);
+            // TODO: Добавьте сюда любой код прорисовки, использующий HDC...
+            Task5(hdc);
+
+            EndPaint(hWnd, &ps);
+        }
 
