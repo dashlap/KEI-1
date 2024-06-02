@@ -1,0 +1,123 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+#define WIDTH 20
+#define HEIGHT 20
+
+int snakeX[100], snakeY[100];
+int length = 1;
+int direction = 0;
+int fruitX, fruitY;
+int gameOver = 0;
+
+void setup() {
+    snakeX[0] = WIDTH / 2;
+    snakeY[0] = HEIGHT / 2;
+    
+    fruitX = rand() % WIDTH;
+    fruitY = rand() % HEIGHT;
+}
+
+void draw() {
+    system("cls");
+    
+    for (int y = 0; y < HEIGHT; y++) {
+        for (int x = 0; x < WIDTH; x++) {
+            if (x == snakeX[0] && y == snakeY[0]) {
+                printf("O");
+            } else if (x == fruitX && y == fruitY) {
+                printf("F");
+            } else {
+                int flag = 0;
+                for (int i = 1; i < length; i++) {
+                    if (x == snakeX[i] && y == snakeY[i]) {
+                        printf("o");
+                        flag = 1;
+                        break;
+                    }
+                }
+                if (!flag) {
+                    printf(" ");
+                }
+            }
+        }
+        printf("\n");
+    }
+}
+
+void input() {
+    if (_kbhit()) {
+        switch (_getch()) {
+            case 'w':
+                direction = 0;
+                break;
+            case 's':
+                direction = 1;
+                break;
+            case 'a':
+                direction = 2;
+                break;
+            case 'd':
+                direction = 3;
+                break;
+            case 'x':
+                gameOver = 1;
+                break;
+        }
+    }
+}
+
+void logic() {
+    for (int i = length - 1; i > 0; i--) {
+        snakeX[i] = snakeX[i - 1];
+        snakeY[i] = snakeY[i - 1];
+    }
+    
+    switch (direction) {
+        case 0:
+            snakeY[0]--;
+            break;
+        case 1:
+            snakeY[0]++;
+            break;
+        case 2:
+            snakeX[0]--;
+            break;
+        case 3:
+            snakeX[0]++;
+            break;
+    }
+    
+    if (snakeX[0] < 0 || snakeX[0] >= WIDTH || snakeY[0] < 0 || snakeY[0] >= HEIGHT) {
+        gameOver = 1;
+    }
+    
+    if (snakeX[0] == fruitX && snakeY[0] == fruitY) {
+        length++;
+        fruitX = rand() % WIDTH;
+        fruitY = rand() % HEIGHT;
+    }
+    
+    for (int i = 1; i < length; i++) {
+        if (snakeX[0] == snakeX[i] && snakeY[0] == snakeY[i]) {
+            gameOver = 1;
+        }
+    }
+}
+
+int main() {
+    setup();
+    
+    while (!gameOver) {
+        draw();
+        input();
+        logic();
+        
+        _sleep(100);
+    }
+    
+    printf("Game Over! Length: %d\n", length);
+    
+    return 0;
+}
