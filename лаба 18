@@ -1,0 +1,37 @@
+
+
+№4
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <Windows.h>
+
+void main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	printf("Лапко Дарья\n");
+	printf("Задание 4\n");
+
+	int a, b, c, d, e, s;
+
+	FILE* fin = fopen("C:\\STUDY\\ОАИП\\Лаба 18\\In4.txt", "rt");
+	if (fin == NULL) {
+		printf("Входной файл не найден\n");
+		return;
+	}
+	fscanf(fin, "%d%d%d%d%d", &a, &b, &c, &d, &e);
+	fclose(fin);
+
+	printf("ввели: %d, %d, %d, %d, %d\n", a, b, c, d, e);
+	s = a + b + c + d + e;
+	printf("s = %d\n", s);
+
+	FILE* fout;
+	fout = fopen("C:\\STUDY\\ОАИП\\Лаба 18\\Out4.txt", "wt");
+	if (fout == NULL) {
+		printf("Выходной файл не создался\n");
+		return;
+	}
+	fprintf(fout, "%d", s);
+	fclose(fout);
+}
